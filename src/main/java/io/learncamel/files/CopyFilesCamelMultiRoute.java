@@ -14,7 +14,8 @@ public class CopyFilesCamelMultiRoute {
 				public void configure() throws Exception {
 					from("file:data/input?noop=true")
 					.to("log:?level=info&showBody=true&showHeaders=true")
-					.to("file:data/output");
+					.to("file:data/output")
+					.to("file:data/anotheroutput");
 					
 					from("file:data/input1?noop=true")
 							.to("log:?level=info&showBody=true&showHeaders=true")
